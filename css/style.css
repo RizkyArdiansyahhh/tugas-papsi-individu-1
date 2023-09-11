@@ -6,11 +6,12 @@
 body {
   height: 100vh;
   font-family: "Poppins", sans-serif;
-  background: url(../img/map.png);
+  background: url(../img/map-background.png);
   background-position: center;
   background-size: cover;
 }
 body header h1 {
   text-align: center;
   color: #fff;
+  padding-top: 1rem;
 }
