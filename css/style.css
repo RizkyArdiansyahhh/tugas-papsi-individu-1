@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 body {
   height: 100vh;
@@ -21,6 +22,7 @@ body header h1 {
 /* MAIN START */
 body main {
   height: 90vh;
+  position: relative;
 }
 body main .content {
   height: 100%;
@@ -32,37 +34,185 @@ body main .content .map {
   position: relative;
 }
 body main .content .map .img-map {
-  animation: scale 1s ease-in-out infinite alternate;
+  animation: scale 2s ease-in-out infinite alternate;
 }
 body main .content .map .img-map:hover {
   animation-play-state: paused;
 }
-body main .content .icons1,
-.icons2,
-.icons3 {
+body main .content .icons-container1,
+.icons-container2,
+.icons-container3 {
   position: absolute;
   height: 45px;
+  z-index: 999;
 }
-body main .content .icons1 {
-  left: 11.2rem;
-  top: 4.7rem;
+body main .content .icons {
+  height: 50px;
 }
-body main .content .icons2 {
-  left: 10.1rem;
-  top: 12rem;
+body main .content h3 {
+  color: #146c94;
+  font-size: 1rem;
+  text-align: center;
+  transition: 1s;
 }
-body main .content .icons3 {
-  left: 16rem;
-  top: 19rem;
+body main .content h3 {
+  opacity: 0;
 }
-body main .content .map:hover .icons {
-  animation: scale2 0.6s ease-in-out infinite alternate;
+body main .content .icons-container1:hover h3 {
+  opacity: 1;
 }
-body main .content .map .icons:hover .img-map {
-  animation-play-state: paused;
+body main .content .icons-container2:hover h3 {
+  opacity: 1;
+}
+body main .content .icons-container3:hover h3 {
+  opacity: 1;
+}
+body main .content .icons-container1 {
+  left: 10.9rem;
+  top: 2.8rem;
+}
+body main .content .icons-container2 {
+  left: 10rem;
+  top: 10.5rem;
+}
+body main .content .icons-container3 {
+  left: 15.7rem;
+  top: 17.7rem;
 }
 
-/* ANIMASI */
+body main .content .map:hover .icons {
+  animation: scale2 1s ease-in-out infinite alternate;
+}
+body main .content .map .icons:hover {
+  animation-play-state: paused;
+}
+body main .description-container {
+  position: absolute;
+  bottom: 6rem;
+  left: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+}
+body main .description-container .logo1,
+.logo2,
+.logo3 {
+  position: absolute;
+  bottom: -31rem;
+  left: -34.9rem;
+  transition: 0.6s ease-in-out;
+  opacity: 0;
+}
+body main .icons-container2 .description-container .logo2 {
+  bottom: -23.3rem;
+  left: -34rem;
+}
+body main .icons-container3 .description-container .logo3 {
+  bottom: -16rem;
+  left: -39.8rem;
+}
+body main .icons-container .description-container .description {
+  width: 250px;
+  position: absolute;
+  left: -34rem;
+  bottom: -31rem;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  background: rgb(172, 188, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(172, 188, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(172, 188, 255, 1) 100%
+  );
+  padding: 1.4rem;
+  position: absolute;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transition: 0.3s 0.5s ease-in-out;
+}
+body main .icons-container2 .description-container .description {
+  bottom: -23.3rem;
+  left: -33rem;
+}
+body main .icons-container3 .description-container .description {
+  bottom: -16.1rem;
+  left: -38.7rem;
+}
+body main .description-container .description p {
+  color: black;
+  padding-top: 0.7rem;
+}
+body main .description-container .description span {
+  font-size: 1.3rem;
+  color: black;
+  padding-left: 1.5rem;
+  font-weight: 600;
+}
+body main .description-container .description img {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.6rem;
+}
+/* ANIMASI HOVER DESCRIPTION START */
+body main .content .icons1:hover + .description-container .description {
+  opacity: 1;
+}
+body
+  main
+  .content
+  .icons-container2
+  .icons2:hover
+  + .description-container
+  .description {
+  opacity: 1;
+}
+body
+  main
+  .content
+  .icons-container3
+  .icons3:hover
+  + .description-container
+  .description {
+  opacity: 1;
+}
+/* ANIMASI HOVER DESCRIPTION END */
+
+/* ANIMASI HOVER LOGO START */
+body
+  main
+  .content
+  .icons-container1
+  .icons1:hover
+  + .description-container
+  .logo1 {
+  bottom: -11rem;
+  opacity: 1;
+}
+body
+  main
+  .content
+  .icons-container2
+  .icons2:hover
+  + .description-container
+  .logo2 {
+  bottom: 2.8rem;
+  opacity: 1;
+}
+body
+  main
+  .content
+  .icons-container3
+  .icons3:hover
+  + .description-container
+  .logo3 {
+  bottom: 11rem;
+  opacity: 1;
+}
+/* ANIMASI HOVER LOGO END */
+/* MAIN END */
+
+/* ANIMASI START */
 @keyframes scale {
   0% {
     transform: scale(1.1);
@@ -71,12 +221,79 @@ body main .content .map .icons:hover .img-map {
     transform: translatey(0);
   }
 }
-
 @keyframes scale2 {
   0% {
     transform: scale(1.3);
   }
   100% {
     transform: translatey(0);
+  }
+}
+/* ANIMASI END*/
+
+/* RESPONSIVE CSS */
+
+/* Desktop */
+@media (max-width: 1024px) {
+  body main .description-container .logo1,
+  .logo2,
+  .logo3 {
+    position: absolute;
+    bottom: -38rem;
+    left: -25.9rem;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+  }
+  body main .icons-container2 .description-container .logo2 {
+    bottom: -30.3rem;
+    left: -25rem;
+  }
+  body main .icons-container3 .description-container .logo3 {
+    bottom: -23rem;
+    left: -30.8rem;
+  }
+  body main .icons-container1 .description-container .description {
+    bottom: -31.3rem;
+    left: -26rem;
+  }
+  body main .icons-container2 .description-container .description {
+    bottom: -23.3rem;
+    left: -25rem;
+  }
+  body main .icons-container3 .description-container .description {
+    bottom: -16.1rem;
+    left: -30.7rem;
+  }
+}
+/* Large Desktop */
+@media (max-width: 1200px) {
+  body main .description-container .logo1,
+  .logo2,
+  .logo3 {
+    position: absolute;
+    bottom: -38rem;
+    left: -25.9rem;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+  }
+  body main .icons-container2 .description-container .logo2 {
+    bottom: -30.3rem;
+    left: -25rem;
+  }
+  body main .icons-container3 .description-container .logo3 {
+    bottom: -23rem;
+    left: -30.8rem;
+  }
+  body main .icons-container1 .description-container .description {
+    bottom: -31.3rem;
+    left: -26rem;
+  }
+  body main .icons-container2 .description-container .description {
+    bottom: -23.3rem;
+    left: -25rem;
+  }
+  body main .icons-container3 .description-container .description {
+    bottom: -16.1rem;
+    left: -30.7rem;
   }
 }
